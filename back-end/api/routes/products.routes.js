@@ -31,7 +31,7 @@ productsRouter.post("/", (req, res, next) => {
     
     const imageProduct = req.file_url ? req.file_url : undefined;
 
-    const newProduct = new Products({
+    const newProduct = new Product({
       article: req.body.article,
       price: req.body.price,
       image: req.body.image,
@@ -73,7 +73,7 @@ productsRouter.delete("/:id", (req, res, next) => {
   const id = req.params.id;
   return Product.findByIdAndDelete(id)
     .then(() => {
-      return res.status(200).json(`Produc with id: ${id} deleted`);
+      return res.status(200).json(`Product with id: ${id} deleted`);
     })
     .catch((err) => {
       const error = new Error(err);

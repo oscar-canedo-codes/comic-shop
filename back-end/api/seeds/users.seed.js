@@ -1,12 +1,30 @@
 const mongoose = require('mongoose');
-const db = require('../db');
+const db = require('../../config/db');
 const User = require('../models/User');
 
+
 const users = [
-    { name: 'Marcos', lastName:'Villegas', age: 35 },
-    { name: 'Oscar', lastName:'Cañedo', age: 31 },
-    { name: 'Estefania', lastName:'Valdez' },        
+    { 
+        email: 'Marcos@upgrade.com', 
+        password: 'upgrade123',
+        name: 'Marcos',
+        role: 'admin',
+    },
+    { 
+        email: 'Oscar@upgrade.com', 
+        password: 'upgrade123',
+        name: 'Oscar',
+        role: 'admin',
+    },
+    { 
+        email: 'Estefania@upgrade.com', 
+        password: 'upgrade123',
+        name: 'Estefania',
+        role: 'user',
+    },
+
 ];
+
 
 const usersDocument = users.map(user => new User(user));
 
@@ -22,5 +40,4 @@ db.connectDB()
         await User.insertMany(usersDocument)
     })
     .catch(err => console.error (`Error creating document in DB: ${err}`))
-
     .finally(() => mongoose.disconnect());

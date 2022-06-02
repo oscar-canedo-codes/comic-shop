@@ -1,4 +1,5 @@
 // IMPORTS
+const config = require('./config/config');
 const express = require('express');
 const logger = require('morgan');
 const HTTPSTATUSCODE = require('./utils/httpStatusCode');
@@ -13,7 +14,7 @@ const comics = require('./api/routes/comics.routes');
 
 
 // DATABASE
-const PORT = 3000
+const PORT = config.PORT;
 
 const server = express();
 

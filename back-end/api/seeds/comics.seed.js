@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const db = require('../db');
+const db = require('../../config/db');
 const Comic = require('../models/Comic');
 
 const comics = [
     {   
-        hero: 'Spider-man', 
-        nameHero:'Peter Parker',
-        writer:'Brian Bendis',
+        title: 'Spider-man', 
+        hero:'Peter Parker',
+        author:'Brian Bendis',
         year:2000,
         description:'Spider-Man has spider-like abilities including superhuman strength and the ability to cling to most surfaces.',
         illustrator:'Mark Gagley',
@@ -14,9 +14,9 @@ const comics = [
         "universe": 'Marvel'
     },
     {
-        "hero": "Daredevil",
-        "nameHero":"Matt Murdock",
-        "writer": "Chip Zdarsky",
+        "title": "Daredevil",
+        "hero":"Matt Murdock",
+        "author": "Chip Zdarsky",
         "year": 2019,
         "description": "Daredevils origins come from an accident he had in his childhood which gave him special abilities.neighborhood of Hells Kitchen.",
         "illustrator":"Marco Checchetto",
@@ -26,9 +26,9 @@ const comics = [
     },
 
     {
-        "hero": "Iron Man",
-        "nameHero":"Tony Stark",
-        "writer": "Christopher Cantwell",
+        "title": "Iron Man",
+        "hero":"Tony Stark",
+        "author": "Christopher Cantwell",
         "year": 2020,
         "description": "BIG IRON! Tony Stark is looking to restart his engine. He decides hes going back to basics, putting away his high-tech.",
         "illustrator":"C Cafu",
@@ -37,9 +37,9 @@ const comics = [
     },
 
     {
-         "hero": "Moon Knight",
-         "nameHero":"Marc Spector",
-         "writer": "Warren Ellis",
+         "title": "Moon Knight",
+         "hero":"Marc Spector",
+         "author": "Warren Ellis",
          "year": 2014,
          "description": "Marc Spector is Moon Knight!...Or is he? It's hard to tell these days, especially when New York's wildest vigilante protects.",
          "illustrator":"Declan Shalvey",
@@ -48,9 +48,9 @@ const comics = [
      },
 
      {
-        "hero": "Wolverine",
-        "nameHero":"Logan",
-        "writer": "Benjamin Percy",
+        "title": "Wolverine",
+        "hero":"Logan",
+        "author": "Benjamin Percy",
         "year": 2020,
         "description": "THE BEST IS BACK! Wolverine been through a lot. He’s been a loner. He’s been a killer.",
         "illustrator":"Viktor Bogdanovic",
@@ -59,9 +59,9 @@ const comics = [
     },
 
     {
-        "hero": "X-Men Red",
-        "nameHero":"X-Men",
-        "writer": "Al Ewing",
+        "title": "X-Men Red",
+        "hero":"X-Men",
+        "author": "Al Ewing",
         "year": 2022,
         "description": "WHO CAN SAVE THE RED PLANET? The mutants of Arakko spent millennia scarred by war.",
         "illustrator":"Stefano Caselli",
@@ -69,9 +69,9 @@ const comics = [
         "universe": 'Marvel'
     },
     {
-        "hero": "Jessica Jones",
-        "nameHero":"Jessica Jones",
-        "writer": "Kelly Thompson",
+        "title": "Jessica Jones",
+        "hero":"Jessica Jones",
+        "author": "Kelly Thompson",
         "year": 2022,
         "description": "Jessica Jones is forced to question everything she thought she knew about her time with the Purple Man.",
         "illustrator":"Mattia De Iulis",
@@ -80,9 +80,9 @@ const comics = [
     },
 
     {
-        "hero": "Captain Marvel ",
-        "nameHero":"Carol Danvers",
-        "writer": "Kelly Thompson",
+        "title": "Captain Marvel ",
+        "hero":"Carol Danvers",
+        "author": "Kelly Thompson",
         "year": 2019,
         "description": "Carol Danvers taps into a new level of power in her fight against Ove, but at what cost?",
         "illustrator":"Lee Garbett",
@@ -91,9 +91,9 @@ const comics = [
     },
 
     {
-        "hero": "Black Widow ",
-        "nameHero":"Natasha Romanoff",
-        "writer": "Kelly Thompson",
+        "title": "Black Widow ",
+        "hero":"Natasha Romanoff",
+        "author": "Kelly Thompson",
         "year": 2020,
         "description": "Natasha Romanoff is known for having skeletons in her closet, but THE LIVING BLADE is the one skeleton.",
         "illustrator":"Elena Casagrande",
@@ -102,9 +102,9 @@ const comics = [
     },
 
     {
-        "hero": "X-Men: Black Mystique ",
-        "nameHero":"Mystique",
-        "writer": "Lonnie Nadler",
+        "title": "X-Men: Black Mystique ",
+        "hero":"Mystique",
+        "author": "Lonnie Nadler",
         "year": 2018,
         "description": "THAT’S SO RAVEN! What’s a day in the life for Raven Darkholme, A.K.A. Mystique? Brutal kills.",
         "illustrator":"Geraldo Borges",
@@ -113,9 +113,9 @@ const comics = [
     },
 
     {
-        "hero": "Devil's Reign: X-Men ",
-        "nameHero":"X-Men",
-        "writer": "Gerry Duggan",
+        "title": "Devil's Reign: X-Men ",
+        "hero":"X-Men",
+        "author": "Gerry Duggan",
         "year": 2018,
         "description": "DEALS WITH THE DEVIL! Turns out attending Hellfire Club soirees was not the naughtiest thing.",
         "illustrator":"Phil Noto",
@@ -124,9 +124,9 @@ const comics = [
     },
 
     {
-        "hero": "Daredevil (2019) ",
-        "nameHero":"Matt Murdock",
-        "writer": "Chip Zdarsky",
+        "title": "Daredevil (2019) ",
+        "hero":"Matt Murdock",
+        "author": "Chip Zdarsky",
         "year": 2019,
         "description": "DOING TIME CONTINUES! As Elektra gets her bearings in Hell's Kitchen, Matt Murdock finds an unlikely ally in prison.",
         "illustrator":"Marco Checchetto",
@@ -134,9 +134,9 @@ const comics = [
         "universe": 'Marvel'
     },
     {
-        "hero": "BATMAN",
-        "nameHero": "Bruce Wyne",
-        "writer": "Tom King",
+        "title": "BATMAN",
+        "hero": "Bruce Wyne",
+        "author": "Tom King",
         "year": 2022,
         "description": "A shocking heist has the mysterious and deadly figure called the Help cutting his way through Gotham City",
        " illustrator":"David Marquez",
@@ -145,9 +145,9 @@ const comics = [
 
     },
     {
+        "title": "NUBIA",
         "hero": "NUBIA",
-        "nameHero": "NUBIA",
-        "writer": "Vita Ayala",
+        "author": "Vita Ayala",
         "year": 2022,
         "description": "After the events of Trial of the Amazons, a new era for these warriors has dawned.",
        " illustrator":"Alitha Martinez",
@@ -155,11 +155,11 @@ const comics = [
         "universe": "DC",
     },
     {
-        "hero": "WONDER WOMAN",
-        "nameHero": "Diana Prince",
-        "writer": "Allan Heinberg",
+        "title": "WONDER WOMAN",
+        "hero": "Diana Prince",
+        "author": "Allan Heinberg",
         "year": 2008,
-        "description": "In this volume collecting WONDER WOMAN #1-4, plus WONDER WOMAN ANNUAL #1 by acclaimed writer Allan Heinberg",
+        "description": "In this volume collecting WONDER WOMAN #1-4, plus WONDER WOMAN ANNUAL #1 by acclaimed author Allan Heinberg",
        " illustrator":"Gary Frank",
         "image":"https://www.ecccomics.com/content/productos/8091/cubierta_wonder_woman_Goodwatch.jpg",
         "universe": "DC",
@@ -169,7 +169,7 @@ const comics = [
 const comicsDocument = comics.map(comic => new Comic(comic));
 
 db.connectDB()
-    // SEARCH FOR PRE-EXISTING ITEMS, IF FOUND DELETE
+    // SEARCH FOR EXISTING ITEMS, IF FOUND DELETE
     .then(async () => {
         const allComics = await Comic.find();
         if(allComics.length > 0){
