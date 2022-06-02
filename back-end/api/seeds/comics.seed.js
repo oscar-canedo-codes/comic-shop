@@ -169,6 +169,7 @@ const comics = [
 const comicsDocument = comics.map(comic => new Comic(comic));
 
 db.connectDB()
+    // SEARCH FOR PRE-EXISTING ITEMS, IF FOUND DELETE
     .then(async () => {
         const allComics = await Comic.find();
         if(allComics.length > 0){

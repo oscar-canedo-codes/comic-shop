@@ -54,7 +54,6 @@ server.use("/comics", comics);
 
 // ERROR CONTROLLER
 
-
 server.use((req, res, next) => {
   
     let err = new Error();
@@ -64,3 +63,12 @@ server.use((req, res, next) => {
 });
 
 server.disable('x-powered-by');
+
+// CONNECT TO DB
+
+db.connectDB().then(() => {
+    console.log("Connected to Mongo database");
+    server.listen(PORT, () => {
+      console.log(`Initiated express server on port ${PORT}`);
+    });
+  });
