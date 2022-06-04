@@ -1,0 +1,16 @@
+@import "./components/Header/header";
+@import "./pages/Admin/admin";
+@import "./pages/Home/home";
+
+@import "./pages/Login/login";
+@import "./components/Footer/footer";
+@import "./components/Search/search";
+;
+.App {
+  font-family: "Russo One", sans-serif;
+}
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0%;
+}
