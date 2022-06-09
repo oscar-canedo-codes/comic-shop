@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const comicSchema = new Schema({
@@ -16,5 +15,4 @@ const comicSchema = new Schema({
 });
 
 const Comic = mongoose.model('Comic', comicSchema);
-
 module.exports = Comic;

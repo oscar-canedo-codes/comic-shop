@@ -6,21 +6,18 @@ const User = require('../models/User');
 const users = [
     { 
         email: 'Marcos@upgrade.com', 
-        password: 'upgrade123',
+        password: 'Upgrade123!',
         name: 'Marcos',
-        role: 'admin',
     },
     { 
         email: 'Oscar@upgrade.com', 
-        password: 'upgrade123',
+        password: 'Upgrade123!',
         name: 'Oscar',
-        role: 'admin',
     },
     { 
         email: 'Estefania@upgrade.com', 
-        password: 'upgrade123',
+        password: 'Upgrade123!',
         name: 'Estefania',
-        role: 'user',
     },
 
 ];

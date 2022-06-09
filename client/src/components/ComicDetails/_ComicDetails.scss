@@ -1,0 +1,178 @@
+.container-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    font-family: "Outfit";
+    
+
+        .details {
+     
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin: 0 auto;
+                padding: 1rem; 
+        }
+
+        @media(min-width: 768px){
+            .details {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                margin: 0 auto;
+                padding: 5rem;
+            }
+        }
+
+        @media(max-width: 768px) {
+            p {
+                font-size: 1.5rem;
+            }
+            .details h2 {
+                font-size: 2rem;
+                
+            }
+            .details h3 {
+                font-size: 2.5rem;
+                color:#e99401;
+            }
+            h3 {
+                margin: 20px 0;
+            }
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #e99401;
+            margin: 1rem 0;
+            background-color: #262626;
+            padding: 1rem;
+            border-radius: 90px;
+        }
+        
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media(min-width:768px){
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 350px;
+                width: 500px;
+            }
+
+        }
+
+        .image {
+            display: flex;
+            height: 400px;
+            width: 250px;
+        }
+    
+        .image img {
+            width: 100%;
+        }
+
+        @media(min-width:768px){
+            .image {
+                display: flex;
+
+                height: 550px;
+                width: 500px;
+                
+            }
+        
+            .image img {
+                width: 100%;
+
+                object-fit: contain;
+
+            }
+
+        }
+
+
+        h2 {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 24px;
+            
+        }
+
+        @media(min-width: 768px){
+            h2 {
+                margin-top: 3rem;
+            }
+        }
+        h3 {
+            font-size: 18px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+
+        .flex-buttons{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+          
+            animation: spin 1s ease infinite;
+          }
+          
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+          
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          .container-spinner {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 2rem;
+          }
+
+          .loading {
+             color:#e99401;
+          }
+
+          .toPurchase {
+              background-color: black;
+              padding: 1rem;
+              color: white;
+              border-radius: 10px;
+          }
+
+
+}
