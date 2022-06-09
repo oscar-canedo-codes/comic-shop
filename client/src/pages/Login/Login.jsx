@@ -1,10 +1,12 @@
-import React from "react";
-import { LoginForm } from "../../components/LoginForm/LoginForm";
+import React from 'react';
+import LoginForm  from "../../components/LoginForm/LoginForm";
 
-export const LoginPage = () => {
+export const Login = () => {
   return (
     <div className="divForm">
       <LoginForm className="divForm" />
     </div>
   );
 };
+
+

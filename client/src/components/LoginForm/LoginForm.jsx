@@ -1,19 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { API } from "../../shared/services/api";
+import { API } from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import { JwtContext } from "../../shared/contexts/JwtContext";
+import { JwtContext } from "../../context/JwtContext";
 import { useContext } from "react";
 
-export const LoginForm = () => {
-
+const LoginForm = () => {
+  
   let navigate = useNavigate();
-
   const { setJwt } = useContext(JwtContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (formData) => {
-      
+
     API.post("users/login", formData).then((response) => {
       console.log(response.data);
       setJwt(response.data);
@@ -23,7 +22,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
+    <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
       <label>Email</label>
       <input
         type="email"
@@ -43,7 +42,9 @@ export const LoginForm = () => {
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
         })}
       />
-      <button className="buttonSubmit">Login</button>
+      <button className="button-submit">Login</button>
     </form>
   );
 };
+
+export default LoginForm 

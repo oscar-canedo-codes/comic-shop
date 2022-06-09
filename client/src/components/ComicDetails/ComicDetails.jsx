@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import "./_ComicDetails.scss";
-import { Button } from "../../Button/Button";
+import { Button } from "../Button/Button";
 import { useComicContext } from "../../context/ComicContext";
 import { API } from "../../services/api";
 
@@ -33,6 +32,7 @@ export const ComicDetails = () => {
   });
 
   return (
+
     <div className="container-card">
       {details.length === 0 && (
         <div class="container-spinner">
@@ -44,7 +44,7 @@ export const ComicDetails = () => {
       {details.length !== 0 && (
         <div className="details">
           <div className="image">
-            <img src={img} />
+            <img src={img} alt="" />
           </div>
 
           <div className="content">
