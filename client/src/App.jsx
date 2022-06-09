@@ -2,8 +2,6 @@ import React from "react";
 
 // PATHS
 import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
-
-// COMPONENTS
 import Footer from './shared/Footer/Footer'
 import Home from './pages/Home/Home';
 import { Login } from './pages/Login/Login'
@@ -13,8 +11,8 @@ import Register from './pages/Register/Register';
 import { AuthenticationReq } from './shared/AuthenticationReq/AuthenticationReq'
 import { JwtContext } from "./context/JwtContext";
 import { useState, useEffect } from "react";
-import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
-import { ComicDetails } from "./components/ComicDetails/ComicDetails";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import ComicDetails from "./components/ComicDetails/ComicDetails";
 import ComicProvider from "./context/ComicContext";
 import {API} from "./services/api" 
 

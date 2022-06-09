@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Button } from "../Button/Button";
+import Button from "../Button/Button";
 import { useComicContext } from "../../context/ComicContext";
 import { API } from "../../services/api";
 
-export const ComicDetails = () => {
+const ComicDetails = () => {
 
   const [details, setDetails] = useState([]);
   const { id } = useParams();
@@ -81,3 +81,5 @@ export const ComicDetails = () => {
     </div>
   );
 };
+
+export default ComicDetails;

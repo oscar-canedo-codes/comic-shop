@@ -1,10 +1,10 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import { API } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
 
-export const RegisterForm = () => {
+ const RegisterForm = () => {
   let navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
@@ -51,3 +51,5 @@ export const RegisterForm = () => {
     </form>
   );
 };
+
+export default RegisterForm;
